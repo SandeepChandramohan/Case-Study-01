@@ -1,9 +1,10 @@
 
 function sandeep()
-
+  
 {
-
+console.log('sandeep fn')
 valid= true;
+var v= true;
 
 
 const uname = document.getElementById('username');
@@ -42,11 +43,15 @@ const password = document.getElementById('pass');
             setErrorFor(password," Password not valid ");
             valid = false;
     }
-
+    
 
 // #####################################################################################################
-
+if (v=valid){
+  console.log('call delay')
+  ;}
     return valid;
+    
+    
 }
 
 // ###################################### Fn for error mssg ###############################################################
@@ -63,14 +68,12 @@ function setErrorFor(input, message) {
 
 function setSuccessFor(input,message) {
   const formControl = input.parentElement;
-  
   const small = formControl.querySelector('small');
   formControl.className = 'form-check success';
-
   small.innerText = message;
-  // iconControl.className = 'icon ok';
-  
+    
 }
+
 
 // ################################################################################################################
 
@@ -91,42 +94,9 @@ function setSuccessFor(input,message) {
    }
  }
 // ################################################################################################################
-document.getElementsById('button3').addEventListener('click', loadRest);
-    
-        function loadRest(){
-            fetch('https://jsonplaceholder.typicode.com/todos')
-                .then(res => res.json())
-                .then(function(data){
-                    let html='';
-                    data.forEach(function(data){
-                        if(data.completed==false)
-                        {
-                        html +=`
-                        <div>
-                        ${data.id})   
-                        ${data.title}
-                        <input id="counter" type="checkbox">
-                        </div>
-                        `;
-                        
-                        
 
-                    }
-                
-              
-                       
-                         else {
-                            html +=`
-                            <div>
-                            ${data.id})   
-                            ${data.title}
-                            <input type="checkbox"disabled checked>
-                            </div>
-                            `;}
 
-                        
-                    });
-                
-                    document.getElementById('result').innerHTML= html; 
-                })              
-        }  
+    // function delay () {
+    //   console.log('delay fn called')
+        // setTimeout( function() { window.location = "landingpg.html" }, 5000 );
+    // }
